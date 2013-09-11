@@ -1,0 +1,15 @@
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemWrapper.Samples.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemWrapper.Samples.pdb
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\Gallio.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\MbUnit.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\Rhino.Mocks.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemInterface.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemWrapper.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemInterface.pdb
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemInterface.xml
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemWrapper.pdb
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\SystemWrapper.xml
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\bin\Release\Rhino.Mocks.xml
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\obj\Release\SystemWrapper.Samples.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\obj\Release\SystemWrapper.Samples.pdb
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper.Samples\obj\Release\SystemWrapper.Samples.csprojResolveAssemblyReference.cache

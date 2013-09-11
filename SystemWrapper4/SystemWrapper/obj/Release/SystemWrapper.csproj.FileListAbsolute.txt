@@ -1,0 +1,6 @@
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemWrapper.XML
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemWrapper.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemWrapper.pdb
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper\obj\Release\SystemWrapper.csprojResolveAssemblyReference.cache
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper\obj\Release\SystemWrapper.dll
+D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemWrapper\obj\Release\SystemWrapper.pdb
