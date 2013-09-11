@@ -1,5 +1,0 @@
-D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemInterface.XML
-D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemInterface.dll
-D:\Programing\C#\SystemWrapper Code\SystemWrapper4\bin\Release\SystemInterface.pdb
-D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemInterface\obj\Release\SystemInterface.dll
-D:\Programing\C#\SystemWrapper Code\SystemWrapper4\SystemInterface\obj\Release\SystemInterface.pdb
