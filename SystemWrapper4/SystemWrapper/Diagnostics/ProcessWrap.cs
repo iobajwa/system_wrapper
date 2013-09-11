@@ -1,5 +1,10 @@
+using System.IO;
 using System.Diagnostics;
+
+using SystemWrapper.IO;
+
 using SystemInterface.Diagnostics;
+using SystemInterface.IO;
 
 namespace SystemWrapper.Diagnostics
 {
@@ -74,6 +79,18 @@ namespace SystemWrapper.Diagnostics
         public bool WaitForInputIdle()
         {
             return ProcessInstance.WaitForInputIdle();
+        }
+
+        /// <inheritdoc />
+        public IStreamReader StandardOutput
+        {
+            get { return new StreamReaderWrap (ProcessInstance.StandardOutput); }
+        }
+
+        /// <inheritdoc />
+        public IStreamReader StandardError
+        {
+            get { return new StreamReaderWrap(ProcessInstance.StandardError); }
         }
     }
 }

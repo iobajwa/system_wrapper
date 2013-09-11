@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
+using SystemInterface.IO;
 
 namespace SystemInterface.Diagnostics
 {
@@ -58,6 +60,9 @@ namespace SystemInterface.Diagnostics
         bool WaitForInputIdle();
 
 
+        IStreamReader StandardOutput { get; }
+
+        IStreamReader StandardError { get; }
 /*
     // Events
     [Browsable(true), MonitoringDescription("ProcessAssociated")]

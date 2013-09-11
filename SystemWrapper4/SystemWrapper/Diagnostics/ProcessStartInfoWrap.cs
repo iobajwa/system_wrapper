@@ -101,5 +101,23 @@ namespace SystemWrapper.Diagnostics
             get { return ProcessStartInfoInstance.UseShellExecute; }
             set { ProcessStartInfoInstance.UseShellExecute = value; }
         }
+
+        public bool RedirectStandardOutput 
+        {
+            get { return ProcessStartInfoInstance.RedirectStandardOutput; }
+            set { ProcessStartInfoInstance.RedirectStandardOutput = value; }
+        }
+
+        public bool RedirectStandardError 
+        {
+            get { return ProcessStartInfoInstance.RedirectStandardError; }
+            set { ProcessStartInfoInstance.RedirectStandardError = value; }
+        }
+
+        public bool CreateNoWindow 
+        {
+            get { return ProcessStartInfoInstance.CreateNoWindow; }
+            set { ProcessStartInfoInstance.CreateNoWindow = value; }
+        }
     }
 }

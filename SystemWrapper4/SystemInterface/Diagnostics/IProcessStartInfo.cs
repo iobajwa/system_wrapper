@@ -49,6 +49,13 @@ namespace SystemInterface.Diagnostics
         /// </summary>
         bool UseShellExecute { get; set; }
 
+
+        bool RedirectStandardOutput { get; set; }
+
+        bool RedirectStandardError { get; set; }
+
+        bool CreateNoWindow { get; set; }
+
         /*
             // Properties
             public bool CreateNoWindow { get; set; }
