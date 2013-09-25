@@ -63,6 +63,17 @@ namespace SystemInterface.Diagnostics
         IStreamReader StandardOutput { get; }
 
         IStreamReader StandardError { get; }
+
+        /// <summary>
+        /// Immediately stops the executing process.
+        /// </summary>
+        void Kill();
+
+
+        /// <summary>
+        /// Gets a value indicating whether the current process as exited.
+        /// </summary>
+        bool HasExited { get; }
 /*
     // Events
     [Browsable(true), MonitoringDescription("ProcessAssociated")]

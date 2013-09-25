@@ -1392,6 +1392,9 @@
         <member name="M:SystemWrapper.Diagnostics.ProcessWrap.WaitForInputIdle">
             <inheritdoc />
         </member>
+        <member name="M:SystemWrapper.Diagnostics.ProcessWrap.Kill">
+            <inheritdoc />
+        </member>
         <member name="P:SystemWrapper.Diagnostics.ProcessWrap.ExitCode">
             <inheritdoc />
         </member>
@@ -1405,6 +1408,9 @@
             <inheritdoc />
         </member>
         <member name="P:SystemWrapper.Diagnostics.ProcessWrap.StandardError">
+            <inheritdoc />
+        </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessWrap.HasExited">
             <inheritdoc />
         </member>
         <member name="T:SystemWrapper.Security.AccessControl.FileSecurityWrap">

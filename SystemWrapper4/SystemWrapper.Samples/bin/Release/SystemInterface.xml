@@ -3543,6 +3543,11 @@
             </summary>
             <returns>true if the associated process has reached an idle state.</returns>
         </member>
+        <member name="M:SystemInterface.Diagnostics.IProcess.Kill">
+            <summary>
+            Immediately stops the executing process.
+            </summary>
+        </member>
         <member name="P:SystemInterface.Diagnostics.IProcess.ExitCode">
             <summary>
             Gets the value that the associated process specified when it terminated.
@@ -3556,6 +3561,11 @@
         <member name="P:SystemInterface.Diagnostics.IProcess.StartInfo">
             <summary>
             Gets or sets the properties to pass to the Start  method of the Process.
+            </summary>
+        </member>
+        <member name="P:SystemInterface.Diagnostics.IProcess.HasExited">
+            <summary>
+            Gets a value indicating whether the current process as exited.
             </summary>
         </member>
         <member name="T:SystemInterface.Data.SqlClient.ISqlCommand">

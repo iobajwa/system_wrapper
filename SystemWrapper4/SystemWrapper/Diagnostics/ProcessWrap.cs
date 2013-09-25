@@ -92,5 +92,18 @@ namespace SystemWrapper.Diagnostics
         {
             get { return new StreamReaderWrap(ProcessInstance.StandardError); }
         }
+
+        /// <inheritdoc />
+        public void Kill()
+        {
+            ProcessInstance.Kill();
+        }
+
+
+        /// <inheritdoc />
+        public bool HasExited 
+        {
+            get { return ProcessInstance.HasExited; }
+        }
     }
 }
