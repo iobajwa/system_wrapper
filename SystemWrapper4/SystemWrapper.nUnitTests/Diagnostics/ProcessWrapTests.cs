@@ -16,16 +16,21 @@ namespace SystemWrapper.nUnitTests.Diagnostics
     {
         Mock<IProcess> _mockProcess;
         Mock<IStreamReader> _mockStreamReader;
+        IProcess _depInvoker = new ProcessWrap();
 
         [SetUp]
         public void Setup()
         {
             _mockProcess = new Mock<IProcess>();
             _mockStreamReader = new Mock<IStreamReader>();
+            _depInvoker.StartInfo.FileName = "cmd";
+            _depInvoker.StartInfo.Arguments = " Exit";
+            _depInvoker.StartInfo.UseShellExecute = false;
+            _depInvoker.StartInfo.CreateNoWindow = true;
         }
 
         [Test]
-        public void should_be_able_to_MOQ_StandardOutput_property()
+        public void _01_should_be_able_to_MOQ_StandardOutput_property()
         {
             _mockStreamReader.Setup(stream => stream.ReadToEnd()).Returns("Hello World!");
             _mockProcess.SetupGet(Process => Process.StandardOutput).Returns(_mockStreamReader.Object);
@@ -36,7 +41,7 @@ namespace SystemWrapper.nUnitTests.Diagnostics
         }
 
         [Test]
-        public void should_be_able_to_MOQ_StandardError_property()
+        public void _02_should_be_able_to_MOQ_StandardError_property()
         {
             _mockStreamReader.Setup(stream => stream.ReadToEnd()).Returns("Error!");
             _mockProcess.SetupGet(Process => Process.StandardError).Returns(_mockStreamReader.Object);
@@ -47,42 +52,41 @@ namespace SystemWrapper.nUnitTests.Diagnostics
         }
 
         [Test]
-        public void should_be_able_to_WRAP_StandardOutput_property()
+        public void _03_should_be_able_to_WRAP_StandardOutput_property()
         {
-            IProcess depInvoker = new ProcessWrap();
-            depInvoker.StartInfo.FileName = "ruby";
-            depInvoker.StartInfo.Arguments = "\"D:\\Softwares\\Programing\\Throw The Switch\\Unity-master\\auto\\generate_test_runner.rb\"" + " " + "\"D:\\Softwares\\Programing\\Throw The Switch\\Unity-master\\auto\\testunit.c\"" + " " + "\"D:\\temp\\generated.c\"";
-            depInvoker.StartInfo.RedirectStandardOutput = true;
-            depInvoker.StartInfo.UseShellExecute = false;
-            depInvoker.StartInfo.CreateNoWindow = true;
+            _depInvoker.StartInfo.RedirectStandardOutput = true;
 
-            depInvoker.Start();
-            bool processSafelyExited = depInvoker.WaitForExit(3000);
+            _depInvoker.Start();
+            bool processSafelyExited = _depInvoker.WaitForExit(3000);
 
-            string standardOutput = depInvoker.StandardOutput.ReadToEnd();
+            string standardOutput = _depInvoker.StandardOutput.ReadToEnd();
 
             Assert.That(processSafelyExited, Is.True);
-            Assert.That(standardOutput, Is.Empty);
+            Assert.That(standardOutput, Is.Not.Empty);
         }
 
         [Test]
-        public void should_be_able_to_WRAP_StandardError_property()
-        {
-            IProcess depInvoker = new ProcessWrap();
-            depInvoker.StartInfo.FileName = "ruby";
-            depInvoker.StartInfo.Arguments = "\"D:\\Softwares\\Programing\\Throw The Switch\\Unity-master\\auto\\generate_test_runner.rb\"" + " " + "\"D:\\Softwares\\Programing\\Throw The Switch\\Unity-master\\auto\\testunit.c\"" + " " + "\"D:\\temp\\generated.c\"";
-            depInvoker.StartInfo.RedirectStandardError = true;
-            depInvoker.StartInfo.UseShellExecute = false;
-            depInvoker.StartInfo.CreateNoWindow = true;
+        public void _04_should_be_able_to_WRAP_StandardError_property()
+        {            
+            _depInvoker.StartInfo.RedirectStandardError = true;
+            _depInvoker.StartInfo.Arguments = "#@#";
+            _depInvoker.Start();
+            bool processSafelyExited = _depInvoker.WaitForExit(3000);
 
-            depInvoker.Start();
-
-            bool processSafelyExited = depInvoker.WaitForExit(3000);
-
-            string standardError = depInvoker.StandardError.ReadToEnd();
+            string standardError = _depInvoker.StandardError.ReadToEnd();
 
             Assert.That(processSafelyExited, Is.True);
             Assert.That(standardError, Is.Not.Empty);
+        }
+
+        [Test]
+        public void _05_SHOULD_return_ExitTime_greater_than_StartTime()
+        {
+            _depInvoker.Start();
+            bool processSafelyExited = _depInvoker.WaitForExit(3000);
+
+            Assert.That(processSafelyExited, Is.True);
+            Assert.That(_depInvoker.ExitTime, Is.GreaterThan(_depInvoker.StartTime));
         }
     }
 }

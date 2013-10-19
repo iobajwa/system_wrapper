@@ -1,4 +1,5 @@
 using System.IO;
+using System;
 using System.Diagnostics;
 
 using SystemWrapper.IO;
@@ -104,6 +105,18 @@ namespace SystemWrapper.Diagnostics
         public bool HasExited 
         {
             get { return ProcessInstance.HasExited; }
+        }
+
+        /// <inheritdoc />
+        public DateTime StartTime 
+        {
+            get { return ProcessInstance.StartTime; }
+        }
+
+        /// <inheritdoc />
+        public DateTime ExitTime
+        {
+            get { return ProcessInstance.ExitTime; }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -74,6 +75,19 @@ namespace SystemInterface.Diagnostics
         /// Gets a value indicating whether the current process as exited.
         /// </summary>
         bool HasExited { get; }
+
+
+        /// <summary>
+        /// Gets the time that the associated process was started
+        /// </summary>
+        [MonitoringDescription("ProcessStartTime"), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        DateTime StartTime { get; }
+
+        /// <summary>
+        /// Gets the time that the associated process exited
+        /// </summary>
+        [MonitoringDescription("ProcessExitTime"), Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        DateTime ExitTime { get; }
 /*
     // Events
     [Browsable(true), MonitoringDescription("ProcessAssociated")]
@@ -120,8 +134,6 @@ namespace SystemInterface.Diagnostics
     public int BasePriority { get; }
     [MonitoringDescription("ProcessEnableRaisingEvents"), Browsable(false), DefaultValue(false)]
     public bool EnableRaisingEvents { get; set; }
-    [MonitoringDescription("ProcessExitTime"), Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public DateTime ExitTime { get; }
     [MonitoringDescription("ProcessHandle"), Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public IntPtr Handle { get; }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), MonitoringDescription("ProcessHandleCount")]
@@ -176,8 +188,6 @@ namespace SystemInterface.Diagnostics
     public StreamWriter StandardInput { get; }
     [MonitoringDescription("ProcessStandardOutput"), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
     public StreamReader StandardOutput { get; }
-    [MonitoringDescription("ProcessStartTime"), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public DateTime StartTime { get; }
     [MonitoringDescription("ProcessSynchronizingObject"), Browsable(false), DefaultValue((string) null)]
     public ISynchronizeInvoke SynchronizingObject { get; set; }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false), MonitoringDescription("ProcessThreads")]

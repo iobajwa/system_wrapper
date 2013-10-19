@@ -1413,6 +1413,12 @@
         <member name="P:SystemWrapper.Diagnostics.ProcessWrap.HasExited">
             <inheritdoc />
         </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessWrap.StartTime">
+            <inheritdoc />
+        </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessWrap.ExitTime">
+            <inheritdoc />
+        </member>
         <member name="T:SystemWrapper.Security.AccessControl.FileSecurityWrap">
             <summary>
             Wrapper for <see cref="T:System.Security.AccessControl.FileSecurity"/> class.
