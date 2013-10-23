@@ -102,22 +102,32 @@ namespace SystemWrapper.Diagnostics
             set { ProcessStartInfoInstance.UseShellExecute = value; }
         }
 
+        /// <inheritdoc />
         public bool RedirectStandardOutput 
         {
             get { return ProcessStartInfoInstance.RedirectStandardOutput; }
             set { ProcessStartInfoInstance.RedirectStandardOutput = value; }
         }
 
+        /// <inheritdoc />
         public bool RedirectStandardError 
         {
             get { return ProcessStartInfoInstance.RedirectStandardError; }
             set { ProcessStartInfoInstance.RedirectStandardError = value; }
         }
 
+        /// <inheritdoc />
         public bool CreateNoWindow 
         {
             get { return ProcessStartInfoInstance.CreateNoWindow; }
             set { ProcessStartInfoInstance.CreateNoWindow = value; }
+        }
+
+        /// <inheritdoc />
+        public string WorkingDirectory
+        {
+            get { return ProcessStartInfoInstance.WorkingDirectory; }
+            set { ProcessStartInfoInstance.WorkingDirectory = value; }
         }
     }
 }

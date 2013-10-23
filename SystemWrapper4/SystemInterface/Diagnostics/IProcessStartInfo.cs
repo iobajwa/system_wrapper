@@ -56,6 +56,8 @@ namespace SystemInterface.Diagnostics
 
         bool CreateNoWindow { get; set; }
 
+        string WorkingDirectory { get; set; }
+
         /*
             // Properties
             public bool CreateNoWindow { get; set; }

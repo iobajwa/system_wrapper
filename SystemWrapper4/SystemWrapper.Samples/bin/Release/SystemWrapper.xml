@@ -2094,6 +2094,18 @@
         <member name="P:SystemWrapper.Diagnostics.ProcessStartInfoWrap.UseShellExecute">
             <inheritdoc />
         </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessStartInfoWrap.RedirectStandardOutput">
+            <inheritdoc />
+        </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessStartInfoWrap.RedirectStandardError">
+            <inheritdoc />
+        </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessStartInfoWrap.CreateNoWindow">
+            <inheritdoc />
+        </member>
+        <member name="P:SystemWrapper.Diagnostics.ProcessStartInfoWrap.WorkingDirectory">
+            <inheritdoc />
+        </member>
         <member name="T:SystemWrapper.Reflection.AssemblyNameWrap">
             <summary>
             Wrapper for <see cref="T:System.Reflection.AssemblyName"/> class.

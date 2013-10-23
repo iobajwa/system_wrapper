@@ -16,17 +16,22 @@ namespace SystemWrapper.nUnitTests.Diagnostics
     {
         Mock<IProcess> _mockProcess;
         Mock<IStreamReader> _mockStreamReader;
-        IProcess _depInvoker = new ProcessWrap();
+        ProcessWrap _wrappedProcess;
+        IProcess _depInvoker;
 
         [SetUp]
         public void Setup()
         {
             _mockProcess = new Mock<IProcess>();
             _mockStreamReader = new Mock<IStreamReader>();
+
+            _wrappedProcess = new ProcessWrap();
+            _depInvoker = _wrappedProcess;
+
             _depInvoker.StartInfo.FileName = "cmd";
-            _depInvoker.StartInfo.Arguments = " Exit";
+            _depInvoker.StartInfo.Arguments = "Exit";
             _depInvoker.StartInfo.UseShellExecute = false;
-            _depInvoker.StartInfo.CreateNoWindow = true;
+            _depInvoker.StartInfo.CreateNoWindow = false;
         }
 
         [Test]
@@ -82,11 +87,22 @@ namespace SystemWrapper.nUnitTests.Diagnostics
         [Test]
         public void _05_SHOULD_return_ExitTime_greater_than_StartTime()
         {
+            _depInvoker.StartInfo.Arguments = "#@#";
             _depInvoker.Start();
             bool processSafelyExited = _depInvoker.WaitForExit(3000);
 
             Assert.That(processSafelyExited, Is.True);
             Assert.That(_depInvoker.ExitTime, Is.GreaterThan(_depInvoker.StartTime));
+        }
+
+        [Test]
+        public void _06_SHOULD_be_able_to_set_correct_WorkingDirectory()
+        {
+            string expectedDir = Directory.GetCurrentDirectory();
+            _depInvoker.StartInfo.WorkingDirectory = expectedDir;
+            string encodedDir = _wrappedProcess.ProcessInstance.StartInfo.WorkingDirectory;
+            
+            Assert.That(encodedDir, Is.EqualTo(expectedDir));
         }
     }
 }
