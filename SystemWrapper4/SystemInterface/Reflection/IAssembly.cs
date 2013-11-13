@@ -184,7 +184,7 @@ namespace SystemInterface.Reflection
         /// Gets the types defined in this assembly.
         /// </summary>
         /// <returns>The loaded assembly. </returns>
-        virtual Type[] GetTypes();
+        Type[] GetTypes();
 
         /*
             public Module[] GetLoadedModules();
