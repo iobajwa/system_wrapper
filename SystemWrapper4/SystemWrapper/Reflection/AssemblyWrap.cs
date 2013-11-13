@@ -250,5 +250,11 @@ namespace SystemWrapper.Reflection
         {
             return new AssemblyWrap(Assembly.LoadFrom(assemblyFile));
         }
+
+        /// <inheritdoc />
+        public virtual Type[] GetTypes()
+        {
+            return AssemblyInstance.GetTypes();
+        }
     }
 }
