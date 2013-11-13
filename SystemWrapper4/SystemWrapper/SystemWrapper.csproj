@@ -65,6 +65,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivatorWrapper.cs" />
     <Compile Include="AppDomainWrap.cs" />
     <Compile Include="Configuration\ConfigurationManagerWrap.cs" />
     <Compile Include="ConsoleWrap.cs" />
