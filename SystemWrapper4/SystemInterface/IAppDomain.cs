@@ -65,6 +65,15 @@ namespace SystemInterface
         /// </summary>
         event ResolveEventHandler AssemblyResolve;
 
+        /// <summary>
+        /// Gets the assemblies which have been loaded into the execution context of this domain.
+        /// 
+        /// Exceptions:
+        ///    System.AppDomainUnloadedException
+        /// </summary>
+        /// <returns></returns>
+        IAssembly[] GetAssemblies();
+
 /*
            // Events
     public event AssemblyLoadEventHandler AssemblyLoad;

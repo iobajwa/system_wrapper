@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using SystemWrapper.Reflection;
 using SystemInterface.Reflection;
@@ -91,6 +92,18 @@ namespace SystemWrapper
         {
             add { AppDomainInstance.AssemblyResolve += value; }
             remove { AppDomainInstance.AssemblyResolve -= value; }
+        }
+
+        /// <inheritdoc />
+        public IAssembly[] GetAssemblies()
+        {
+            System.Reflection.Assembly[] assemblies = AppDomainInstance.GetAssemblies();
+            IAssembly[] wrappedAssemblies = new IAssembly[assemblies.Length];
+
+            for (int i = 0; i < wrappedAssemblies.Length; i++)
+                wrappedAssemblies[i] = new AssemblyWrap(assemblies[i]);
+
+            return wrappedAssemblies;
         }
     }
 }
