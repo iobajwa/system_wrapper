@@ -118,5 +118,12 @@ namespace SystemWrapper.Diagnostics
         {
             get { return ProcessInstance.ExitTime; }
         }
+
+        /// <inheritdoc />
+        public IntPtr ProcessorAffinity 
+        {
+            get { return ProcessInstance.ProcessorAffinity; }
+            set { ProcessInstance.ProcessorAffinity = value; }
+        }
     }
 }

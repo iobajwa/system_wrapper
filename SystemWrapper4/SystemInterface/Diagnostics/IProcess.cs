@@ -88,6 +88,13 @@ namespace SystemInterface.Diagnostics
         /// </summary>
         [MonitoringDescription("ProcessExitTime"), Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         DateTime ExitTime { get; }
+
+
+        /// <summary>
+        /// Gets or sets the processors on which the threads in this process can be scheduled to run.
+        /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), MonitoringDescription("ProcessProcessorAffinity")]
+        IntPtr ProcessorAffinity { get; set; }
 /*
     // Events
     [Browsable(true), MonitoringDescription("ProcessAssociated")]
