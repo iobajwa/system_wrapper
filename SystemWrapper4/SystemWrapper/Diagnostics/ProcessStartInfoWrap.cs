@@ -117,6 +117,13 @@ namespace SystemWrapper.Diagnostics
         }
 
         /// <inheritdoc />
+        public bool RedirectStandardInput 
+        {
+            get { return ProcessStartInfoInstance.RedirectStandardInput; }
+            set { ProcessStartInfoInstance.RedirectStandardInput = value; }
+        }
+
+        /// <inheritdoc />
         public bool CreateNoWindow 
         {
             get { return ProcessStartInfoInstance.CreateNoWindow; }

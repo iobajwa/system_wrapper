@@ -54,6 +54,8 @@ namespace SystemInterface.Diagnostics
 
         bool RedirectStandardError { get; set; }
 
+        bool RedirectStandardInput { get; set; }
+
         bool CreateNoWindow { get; set; }
 
         string WorkingDirectory { get; set; }

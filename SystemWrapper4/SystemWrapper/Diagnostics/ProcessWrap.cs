@@ -95,6 +95,24 @@ namespace SystemWrapper.Diagnostics
         }
 
         /// <inheritdoc />
+        public IStreamWriter StandardInput
+        {
+            get { return new StreamWriterWrap(ProcessInstance.StandardInput); }
+        }
+
+        /// <inheritdoc />
+        public void BeginErrorReadLine()
+        {
+            ProcessInstance.BeginErrorReadLine();
+        }
+
+        /// <inheritdoc />
+        public void BeginOutputReadLine()
+        {
+            ProcessInstance.BeginOutputReadLine();
+        }
+
+        /// <inheritdoc />
         public void Kill()
         {
             ProcessInstance.Kill();
@@ -124,6 +142,27 @@ namespace SystemWrapper.Diagnostics
         {
             get { return ProcessInstance.ProcessorAffinity; }
             set { ProcessInstance.ProcessorAffinity = value; }
+        }
+
+        /// <inheritdoc />
+        public bool EnableRaisingEvents 
+        {
+            get { return ProcessInstance.EnableRaisingEvents; }
+            set { ProcessInstance.EnableRaisingEvents = value; }
+        }
+
+        /// <inheritdoc />
+        public event DataReceivedEventHandler ErrorDataReceived
+        {
+            add { ProcessInstance.ErrorDataReceived += value; }
+            remove { ProcessInstance.ErrorDataReceived -= value; }
+        }
+
+        /// <inheritdoc />        
+        public event DataReceivedEventHandler OutputDataReceived
+        {
+            add { ProcessInstance.OutputDataReceived += value; }
+            remove { ProcessInstance.OutputDataReceived -= value; }
         }
     }
 }

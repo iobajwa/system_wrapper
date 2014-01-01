@@ -210,5 +210,101 @@ namespace SystemInterface.IO
         /// <param name="arg1">An object to write into the formatted string.</param>
         /// <param name="arg2">An object to write into the formatted string.</param>
         void Write(string format, Object arg0, Object arg1, Object arg2);
+        /// <summary>
+        /// Writes a character followed by a line terminator to the text stream.
+        /// </summary>
+        /// <param name="value">The character to write to the text stream.</param>
+        void WriteLine(char value);
+        /// <summary>
+        /// Writes a character array followed by a line terminator to the stream.
+        /// </summary>
+        /// <param name="buffer">A character array containing the data to write. If buffer is nullNothingnullptra null reference (Nothing in Visual Basic), nothing is written.</param>
+        void WriteLine(char[] buffer);
+        /// <summary>
+        /// Writes a string followed by a line terminator to the stream.
+        /// </summary>
+        /// <param name="value">The string to write to the stream. If value is null, nothing is written.</param>
+        void WriteLine(string value);
+        /// <summary>
+        /// Writes the text representation of a Boolean value followed by a line terminator to the text stream.
+        /// </summary>
+        /// <param name="value">The Boolean to write.</param>
+        void WriteLine(bool value);
+        /// <summary>
+        /// Writes the text representation of a decimal value followed by a line terminator to the text stream. 
+        /// </summary>
+        /// <param name="value">The decimal value to write.</param>
+        void WriteLine(decimal value);
+        /// <summary>
+        /// Writes the text representation of an 8-byte floating-point value followed by a line terminator to the text stream. 
+        /// </summary>
+        /// <param name="value">The 8-byte floating-point value to write.</param>
+        void WriteLine(double value);
+        /// <summary>
+        /// Writes the text representation of a 4-byte signed integer followed by a line terminator to the text stream.
+        /// </summary>
+        /// <param name="value">The 4-byte signed integer to write.</param>
+        void WriteLine(int value);
+        /// <summary>
+        /// Writes the text representation of an 8-byte signed integer followed by a line terminator to the text stream. 
+        /// </summary>
+        /// <param name="value">The 8-byte signed integer to write.</param>
+        void WriteLine(long value);
+        /// <summary>
+        /// Writes the text representation of an object to the text stream followed by a line terminator by calling ToString on that object. 
+        /// </summary>
+        /// <param name="value">The object to write. </param>
+        void WriteLine(Object value);
+        /// <summary>
+        /// Writes the text representation of a 4-byte floating-point value followed by a line terminator to the text stream. 
+        /// </summary>
+        /// <param name="value">The 4-byte floating-point value to write.</param>
+        void WriteLine(float value);
+        /// <summary>
+        /// Writes the text representation of a 4-byte unsigned integer followed by a line terminator to the text stream. 
+        /// </summary>
+        /// <param name="value">The 4-byte unsigned integer to write.</param>	       
+
+        void WriteLine(uint value);
+        /// <summary>
+        /// Writes the text representation of an 8-byte unsigned integer followed by a line terminator to the text stream.
+        /// </summary>
+        /// <param name="value">The 8-byte unsigned integer to write.</param>	       
+
+        void WriteLine(ulong value);
+        /// <summary>
+        /// Writes out a formatted string, using the same semantics as String.Format followed by a line terminator.
+        /// </summary>
+        /// <param name="format">The formatting string. </param>
+        /// <param name="arg0">An object to write into the formatted string.</param>
+        void WriteLine(string format, Object arg0);
+        /// <summary>
+        /// Writes out a formatted string, using the same semantics as String.Format followed by a line terminator.
+        /// </summary>
+        /// <param name="format">The formatting string. </param>
+        /// <param name="arg">The object array to write into the formatted string. </param>
+        void WriteLine(string format, Object[] arg);
+        /// <summary>
+        /// Writes a subarray of characters to the stream followed by a line terminator.
+        /// </summary>
+        /// <param name="buffer">A character array containing the data to write. </param>
+        /// <param name="index">The index into buffer at which to begin writing.</param>
+        /// <param name="count">The number of characters to read from buffer. </param>
+        void WriteLine(char[] buffer, int index, int count);
+        /// <summary>
+        /// Writes out a formatted string, using the same semantics as String.Format followed by a line terminator.
+        /// </summary>
+        /// <param name="format">The formatting string. </param>
+        /// <param name="arg0">An object to write into the formatted string.</param>
+        /// <param name="arg1">An object to write into the formatted string.</param>
+        void WriteLine(string format, Object arg0, Object arg1);
+        /// <summary>
+        /// Writes out a formatted string, using the same semantics as String.Format followed by a line terminator.
+        /// </summary>
+        /// <param name="format">The formatting string. </param>
+        /// <param name="arg0">An object to write into the formatted string.</param>
+        /// <param name="arg1">An object to write into the formatted string.</param>
+        /// <param name="arg2">An object to write into the formatted string.</param>
+        void WriteLine(string format, Object arg0, Object arg1, Object arg2);
     }
 }

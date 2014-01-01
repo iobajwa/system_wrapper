@@ -233,5 +233,107 @@ namespace SystemWrapper.IO
         {
             StreamWriterInstance.Write(buffer, index, count);
         }
+
+        /// <inheritdoc />
+        public override void WriteLine(char value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(char[] buffer)
+        {
+            StreamWriterInstance.WriteLine(buffer);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(string value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(bool value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(decimal value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(double value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(int value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(long value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+        
+        /// <inheritdoc />
+        public override void WriteLine(System.Object value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(float value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(uint value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(ulong value)
+        {
+            StreamWriterInstance.WriteLine(value);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(string format, System.Object arg0)
+        {
+            StreamWriterInstance.WriteLine(format, arg0);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(string format, System.Object[] arg)
+        {
+            StreamWriterInstance.WriteLine(format, arg);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(char[] buffer, int index, int count)
+        {
+            StreamWriterInstance.WriteLine(buffer, index, count);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(string format, System.Object arg0, System.Object arg1)
+        {
+            StreamWriterInstance.WriteLine(format, arg0, arg1);
+        }
+
+        /// <inheritdoc />
+        public override void WriteLine(string format, System.Object arg0, System.Object arg1, System.Object arg2)
+        {
+            StreamWriterInstance.WriteLine(format, arg0, arg1, arg2);
+        }
     }
 }

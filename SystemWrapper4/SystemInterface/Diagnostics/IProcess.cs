@@ -61,9 +61,30 @@ namespace SystemInterface.Diagnostics
         bool WaitForInputIdle();
 
 
+        /// <summary>
+        /// Gets a stream used to read the output of the application.
+        /// </summary>
         IStreamReader StandardOutput { get; }
 
+        /// <summary>
+        /// Gets a stream used to read the error output of the application.
+        /// </summary>
         IStreamReader StandardError { get; }
+
+        /// <summary>
+        /// Gets a stream used to write the input of the application.
+        /// </summary>
+        IStreamWriter StandardInput { get; }
+
+        /// <summary>
+        /// Begins asynchronous operations on the redirected System.Diagnostics.Process.StandardError stream of the application.
+        /// </summary>
+        void BeginErrorReadLine();
+
+        /// <summary>
+        /// Begins asynchronous operations on the redirected System.Diagnostics.Process.StandardOutput stream of the application.
+        /// </summary>
+        void BeginOutputReadLine();
 
         /// <summary>
         /// Immediately stops the executing process.
@@ -95,14 +116,27 @@ namespace SystemInterface.Diagnostics
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), MonitoringDescription("ProcessProcessorAffinity")]
         IntPtr ProcessorAffinity { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets whether the System.Diagnostics.Process.HasExitedEvent be raised when the process has exited.
+        /// </summary>
+        [MonitoringDescription("ProcessEnableRaisingEvents"), Browsable(false), DefaultValue(false)]
+        bool EnableRaisingEvents { get; set; }
+
+
+        [Browsable(true), MonitoringDescription("ProcessAssociated")]
+        event DataReceivedEventHandler ErrorDataReceived;
+
+        [Browsable(true), MonitoringDescription("ProcessAssociated")]
+        event DataReceivedEventHandler OutputDataReceived;
+
 /*
     // Events
-    [Browsable(true), MonitoringDescription("ProcessAssociated")]
-    public event DataReceivedEventHandler ErrorDataReceived;
+
     [Category("Behavior"), MonitoringDescription("ProcessExited")]
     public event EventHandler Exited;
-    [Browsable(true), MonitoringDescription("ProcessAssociated")]
-    public event DataReceivedEventHandler OutputDataReceived;
+    
 
     // Methods
     public ProcessInstance();
@@ -139,8 +173,7 @@ namespace SystemInterface.Diagnostics
     // Properties
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), MonitoringDescription("ProcessBasePriority")]
     public int BasePriority { get; }
-    [MonitoringDescription("ProcessEnableRaisingEvents"), Browsable(false), DefaultValue(false)]
-    public bool EnableRaisingEvents { get; set; }
+    
     [MonitoringDescription("ProcessHandle"), Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public IntPtr Handle { get; }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), MonitoringDescription("ProcessHandleCount")]
