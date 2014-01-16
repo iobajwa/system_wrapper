@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>SystemInterface.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -83,6 +84,7 @@
     <Compile Include="Security\AccessControl\IFileSecurity.cs" />
     <Compile Include="Security\AccessControl\IRegistrySecurity.cs" />
     <Compile Include="Threading\IThread.cs" />
+    <Compile Include="Windows\IMessageBox.cs" />
     <Compile Include="XML\Serialization\IXmlSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
