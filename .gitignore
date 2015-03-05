@@ -1,0 +1,9 @@
+/SystemWrapper4/bin
+/SystemWrapper4/SystemInterface/obj/Debug
+/SystemWrapper4/SystemWrapper.Samples/obj/Debug
+/SystemWrapper4/SystemWrapper.nUnitTests/bin/Debug
+/SystemWrapper4/SystemWrapper.nUnitTests/*.user
+/SystemWrapper4/SystemWrapper.Tests/obj/Debug
+/SystemWrapper4/SystemWrapper/obj/Debug
+/SystemWrapper4/SystemWrapper.nUnitTests/obj/Debug
+/SystemWrapper4/*.suo
