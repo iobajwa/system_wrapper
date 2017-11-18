@@ -1,0 +1,7 @@
+All data, irrespective of it's form, currently present or hereafter added, modified, reformed, deleted in this repository and/or any linked repository(s) is solely for the purpose of demonstration. Any sharing, copying, modification, borrowing, alteration, dissemination requires written permission and knowledge of it’s author.
+No use of this data is permitted for any purpose, under any circumstance, without any exceptions.
+
+Author of project:
+Bhavnit Singh Bajwa,
+iobajwa@gmail.com
+github.com/iobajwa
